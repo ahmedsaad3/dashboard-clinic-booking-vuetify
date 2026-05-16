@@ -15,6 +15,21 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@core/*": [
+        "./src/@core/*"
+      ],
+      "@layouts/*": [
+        "./src/@layouts/*"
+      ],
+      "@images/*": [
+        "./src/assets/images/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@configured-variables/*": [
+        "./src/styles/variables/_vuetify.scss"
       ]
     }
   },

@@ -1,4 +1,4 @@
-import router from '../router';
+import router from './router';
 import i18n from './i18n';
 import {createPinia} from 'pinia';
 /**
