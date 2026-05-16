@@ -1,0 +1,153 @@
+:root {
+    /* Color tokens - Primary: Green (Medical, trust, wellness) */
+    --color-primary-50: oklch(0.97 0.015 150);
+    --color-primary-100: oklch(0.93 0.025 150);
+    --color-primary-200: oklch(0.87 0.045 150);
+    --color-primary-300: oklch(0.78 0.07 150);
+    --color-primary-400: oklch(0.68 0.09 150);
+    --color-primary-500: oklch(0.58 0.10 150);
+    --color-primary-600: oklch(0.50 0.095 150);
+    --color-primary-700: oklch(0.42 0.085 150);
+    --color-primary-800: oklch(0.35 0.07 150);
+    --color-primary-900: oklch(0.27 0.055 150);
+    --color-primary-950: oklch(0.18 0.04 150);
+
+    /* Secondary: Blue (Speed, flexibility, modernity) */
+    --color-secondary-50: oklch(0.97 0.008 260);
+    --color-secondary-100: oklch(0.94 0.014 260);
+    --color-secondary-200: oklch(0.88 0.025 260);
+    --color-secondary-300: oklch(0.80 0.038 260);
+    --color-secondary-400: oklch(0.71 0.048 260);
+    --color-secondary-500: oklch(0.63 0.052 260);
+    --color-secondary-600: oklch(0.55 0.048 260);
+    --color-secondary-700: oklch(0.47 0.042 260);
+    --color-secondary-800: oklch(0.39 0.034 260);
+    --color-secondary-900: oklch(0.30 0.025 260);
+    --color-secondary-950: oklch(0.21 0.018 260);
+
+    /* Accent: Warm copper/orange (Energy, luxury, call-to-action) */
+    --color-accent-50: oklch(0.97 0.022 45);
+    --color-accent-100: oklch(0.94 0.038 45);
+    --color-accent-200: oklch(0.88 0.062 45);
+    --color-accent-300: oklch(0.80 0.088 45);
+    --color-accent-400: oklch(0.72 0.108 45);
+    --color-accent-500: oklch(0.64 0.12 45);
+    --color-accent-600: oklch(0.56 0.112 45);
+    --color-accent-700: oklch(0.48 0.098 45);
+    --color-accent-800: oklch(0.40 0.082 45);
+    --color-accent-900: oklch(0.32 0.062 45);
+    --color-accent-950: oklch(0.22 0.045 45);
+
+    /* Surface tokens - harmonized with green primary */
+    --color-prim-bg: oklch(0.985 0.006 150);
+    --color-prim-text: oklch(0.16 0.008 150);
+    --color-prim-bg-surface: oklch(0.94 0.008 150);
+    --color-prim-text-muted: oklch(0.48 0.008 150);
+    --color-prim-border: oklch(0.82 0.008 150);
+    --color-prim-bg-surface-baked: oklch(0.94 0.008 150);
+    --color-prim-text-on-surface: oklch(0.16 0.008 150);
+
+    /* Shadows */
+    --shadow-prim: 0 3px 5px rgba(0, 0, 0, 0.13), 0 6px 15px rgba(0, 0, 0, 0.08);
+    --shadow-prim-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-prim-md: 0 3px 5px rgba(0, 0, 0, 0.13), 0 6px 15px rgba(0, 0, 0, 0.08);
+    --shadow-prim-lg: 0 7px 18px rgba(0, 0, 0, 0.15), 0 4px 7px rgba(0, 0, 0, 0.08);
+    --shadow-prim-xl: 0 18px 40px rgba(0, 0, 0, 0.20), 0 7px 16px rgba(0, 0, 0, 0.11);
+    --shadow-prim-secondary: none;
+
+    /* Style */
+    --prim-style: default;
+    --prim-backdrop-blur: none;
+    --prim-border-width: 1px;
+    --prim-bg-gradient: oklch(0.985 0.006 150);
+
+    /* Layout tokens */
+    --radius-prim: 10px;
+    --spacing-prim-x: 5px;
+    --spacing-prim-y: 5px;
+
+    /* Spacing utilities - generated */
+    --prim-spacing-x-0-5: calc(var(--spacing-prim-x) * 0.5);
+    --prim-spacing-y-0-5: calc(var(--spacing-prim-y) * 0.5);
+    --prim-spacing-0-5: calc(var(--spacing-prim-y) * 0.5);
+    --prim-spacing-x-1: calc(var(--spacing-prim-x) * 1);
+    --prim-spacing-y-1: calc(var(--spacing-prim-y) * 1);
+    --prim-spacing-1: calc(var(--spacing-prim-y) * 1);
+    --prim-spacing-x-1-5: calc(var(--spacing-prim-x) * 1.5);
+    --prim-spacing-y-1-5: calc(var(--spacing-prim-y) * 1.5);
+    --prim-spacing-1-5: calc(var(--spacing-prim-y) * 1.5);
+    --prim-spacing-x-2: calc(var(--spacing-prim-x) * 2);
+    --prim-spacing-y-2: calc(var(--spacing-prim-y) * 2);
+    --prim-spacing-2: calc(var(--spacing-prim-y) * 2);
+    --prim-spacing-x-2-5: calc(var(--spacing-prim-x) * 2.5);
+    --prim-spacing-y-2-5: calc(var(--spacing-prim-y) * 2.5);
+    --prim-spacing-2-5: calc(var(--spacing-prim-y) * 2.5);
+    --prim-spacing-x-3: calc(var(--spacing-prim-x) * 3);
+    --prim-spacing-y-3: calc(var(--spacing-prim-y) * 3);
+    --prim-spacing-3: calc(var(--spacing-prim-y) * 3);
+    --prim-spacing-x-4: calc(var(--spacing-prim-x) * 4);
+    --prim-spacing-y-4: calc(var(--spacing-prim-y) * 4);
+    --prim-spacing-4: calc(var(--spacing-prim-y) * 4);
+    --prim-spacing-x-5: calc(var(--spacing-prim-x) * 5);
+    --prim-spacing-y-5: calc(var(--spacing-prim-y) * 5);
+    --prim-spacing-5: calc(var(--spacing-prim-y) * 5);
+    --prim-spacing-x-6: calc(var(--spacing-prim-x) * 6);
+    --prim-spacing-y-6: calc(var(--spacing-prim-y) * 6);
+    --prim-spacing-6: calc(var(--spacing-prim-y) * 6);
+    --prim-spacing-x-8: calc(var(--spacing-prim-x) * 8);
+    --prim-spacing-y-8: calc(var(--spacing-prim-y) * 8);
+    --prim-spacing-8: calc(var(--spacing-prim-y) * 8);
+    --prim-spacing-x-10: calc(var(--spacing-prim-x) * 10);
+    --prim-spacing-y-10: calc(var(--spacing-prim-y) * 10);
+    --prim-spacing-10: calc(var(--spacing-prim-y) * 10);
+    --prim-spacing-x-12: calc(var(--spacing-prim-x) * 12);
+    --prim-spacing-y-12: calc(var(--spacing-prim-y) * 12);
+    --prim-spacing-12: calc(var(--spacing-prim-y) * 12);
+    --prim-spacing-x-16: calc(var(--spacing-prim-x) * 16);
+    --prim-spacing-y-16: calc(var(--spacing-prim-y) * 16);
+    --prim-spacing-16: calc(var(--spacing-prim-y) * 16);
+    --prim-inline-gap: calc(var(--spacing-prim-x) * 2);
+
+    /* Semantic colors */
+    --color-prim-error: oklch(0.60 0.22 25);
+    --color-prim-success: oklch(0.62 0.15 150);
+    --color-prim-warning: oklch(0.74 0.16 75);
+
+    /* Typography */
+    --font-prim: Alexandria, DM Sans, system-ui, sans-serif;
+    --font-prim-mono: JetBrains Mono, monospace;
+
+    --font-size-prim: 0.875rem;
+    --font-weight-prim: 400;
+    --leading-prim: 1.5;
+
+    /* Type scale */
+    --font-size-xs: 0.5625rem;
+    --prim-font-size-xs: 0.5625rem;
+    --font-size-sm: 0.7rem;
+    --prim-font-size-sm: 0.7rem;
+    --font-size-base: 0.875rem;
+    --prim-font-size-base: 0.875rem;
+    --font-size-lg: 1.0938rem;
+    --prim-font-size-lg: 1.0938rem;
+    --font-size-xl: 1.3687rem;
+    --prim-font-size-xl: 1.3687rem;
+    --font-size-2xl: 1.7063rem;
+    --prim-font-size-2xl: 1.7063rem;
+    --font-size-3xl: 2.1375rem;
+    --prim-font-size-3xl: 2.1375rem;
+    --font-size-4xl: 2.6688rem;
+    --prim-font-size-4xl: 2.6688rem;
+
+    /* On-fill text colors */
+    --color-prim-primary-on-fill: oklch(0.98 0.005 150);
+    --color-prim-secondary-on-fill: oklch(0.16 0.008 260);
+    --color-prim-accent-on-fill: oklch(0.16 0.008 45);
+    --prim-primary-on-fill: var(--color-prim-primary-on-fill);
+    --prim-secondary-on-fill: var(--color-prim-secondary-on-fill);
+    --prim-accent-on-fill: var(--color-prim-accent-on-fill);
+
+    /* Animation */
+    --prim-animation-personality: 0.5;
+    --prim-reduced-motion: 0;
+}

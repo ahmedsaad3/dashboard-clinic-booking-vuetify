@@ -1,0 +1,23 @@
+@import './tokens.css';
+
+:root {
+  background-color: var(--color-prim-bg);
+  color: var(--color-prim-text);
+  font-family: var(--font-prim);
+  font-size: var(--font-size-prim);
+  line-height: var(--leading-prim);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-prim-bg);
+  color: var(--color-prim-text);
+  font-family: var(--font-prim);
+}
+
+@layer vuetify-overrides {
+  code, pre, .v-code {
+    font-family: var(--font-prim-mono);
+  }
+}
+
