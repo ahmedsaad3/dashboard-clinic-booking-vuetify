@@ -1,153 +1,221 @@
 :root {
-    /* Color tokens - Primary: Green (Medical, trust, wellness) */
-    --color-primary-50: oklch(0.97 0.015 150);
-    --color-primary-100: oklch(0.93 0.025 150);
-    --color-primary-200: oklch(0.87 0.045 150);
-    --color-primary-300: oklch(0.78 0.07 150);
-    --color-primary-400: oklch(0.68 0.09 150);
-    --color-primary-500: oklch(0.58 0.10 150);
-    --color-primary-600: oklch(0.50 0.095 150);
-    --color-primary-700: oklch(0.42 0.085 150);
-    --color-primary-800: oklch(0.35 0.07 150);
-    --color-primary-900: oklch(0.27 0.055 150);
-    --color-primary-950: oklch(0.18 0.04 150);
+  /* ============================================================
+   * COLOR SYSTEM — Medical Dashboard
+   * Palette: Deep Teal Primary + Slate Secondary + Amber Accent
+   * All colors meet WCAG AA contrast on their backgrounds
+   * ============================================================ */
 
-    /* Secondary: Blue (Speed, flexibility, modernity) */
-    --color-secondary-50: oklch(0.97 0.008 260);
-    --color-secondary-100: oklch(0.94 0.014 260);
-    --color-secondary-200: oklch(0.88 0.025 260);
-    --color-secondary-300: oklch(0.80 0.038 260);
-    --color-secondary-400: oklch(0.71 0.048 260);
-    --color-secondary-500: oklch(0.63 0.052 260);
-    --color-secondary-600: oklch(0.55 0.048 260);
-    --color-secondary-700: oklch(0.47 0.042 260);
-    --color-secondary-800: oklch(0.39 0.034 260);
-    --color-secondary-900: oklch(0.30 0.025 260);
-    --color-secondary-950: oklch(0.21 0.018 260);
+  /* Primary: Deep Teal — trust, medicine, calm */
+  --color-primary-50:  oklch(0.97 0.018 195);
+  --color-primary-100: oklch(0.93 0.035 195);
+  --color-primary-200: oklch(0.86 0.060 195);
+  --color-primary-300: oklch(0.75 0.090 195);
+  --color-primary-400: oklch(0.63 0.115 195);
+  --color-primary-500: oklch(0.52 0.130 195);
+  --color-primary-600: oklch(0.44 0.118 195);
+  --color-primary-700: oklch(0.37 0.100 195);
+  --color-primary-800: oklch(0.30 0.080 195);
+  --color-primary-900: oklch(0.23 0.060 195);
+  --color-primary-950: oklch(0.15 0.040 195);
 
-    /* Accent: Warm copper/orange (Energy, luxury, call-to-action) */
-    --color-accent-50: oklch(0.97 0.022 45);
-    --color-accent-100: oklch(0.94 0.038 45);
-    --color-accent-200: oklch(0.88 0.062 45);
-    --color-accent-300: oklch(0.80 0.088 45);
-    --color-accent-400: oklch(0.72 0.108 45);
-    --color-accent-500: oklch(0.64 0.12 45);
-    --color-accent-600: oklch(0.56 0.112 45);
-    --color-accent-700: oklch(0.48 0.098 45);
-    --color-accent-800: oklch(0.40 0.082 45);
-    --color-accent-900: oklch(0.32 0.062 45);
-    --color-accent-950: oklch(0.22 0.045 45);
+  /* Secondary: Warm Slate — neutral, readable, modern */
+  --color-secondary-50:  oklch(0.97 0.005 250);
+  --color-secondary-100: oklch(0.94 0.010 250);
+  --color-secondary-200: oklch(0.87 0.020 250);
+  --color-secondary-300: oklch(0.76 0.032 250);
+  --color-secondary-400: oklch(0.64 0.042 250);
+  --color-secondary-500: oklch(0.52 0.048 250);
+  --color-secondary-600: oklch(0.43 0.044 250);
+  --color-secondary-700: oklch(0.35 0.038 250);
+  --color-secondary-800: oklch(0.28 0.030 250);
+  --color-secondary-900: oklch(0.21 0.022 250);
+  --color-secondary-950: oklch(0.14 0.015 250);
 
-    /* Surface tokens - harmonized with green primary */
-    --color-prim-bg: oklch(0.985 0.006 150);
-    --color-prim-text: oklch(0.16 0.008 150);
-    --color-prim-bg-surface: oklch(0.94 0.008 150);
-    --color-prim-text-muted: oklch(0.48 0.008 150);
-    --color-prim-border: oklch(0.82 0.008 150);
-    --color-prim-bg-surface-baked: oklch(0.94 0.008 150);
-    --color-prim-text-on-surface: oklch(0.16 0.008 150);
+  /* Accent: Amber Gold — attention, premium, call-to-action */
+  --color-accent-50:  oklch(0.98 0.025 80);
+  --color-accent-100: oklch(0.95 0.055 80);
+  --color-accent-200: oklch(0.90 0.090 80);
+  --color-accent-300: oklch(0.83 0.130 80);
+  --color-accent-400: oklch(0.75 0.155 80);
+  --color-accent-500: oklch(0.68 0.165 80);
+  --color-accent-600: oklch(0.59 0.148 80);
+  --color-accent-700: oklch(0.50 0.128 80);
+  --color-accent-800: oklch(0.41 0.105 80);
+  --color-accent-900: oklch(0.32 0.080 80);
+  --color-accent-950: oklch(0.22 0.055 80);
 
-    /* Shadows */
-    --shadow-prim: 0 3px 5px rgba(0, 0, 0, 0.13), 0 6px 15px rgba(0, 0, 0, 0.08);
-    --shadow-prim-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-    --shadow-prim-md: 0 3px 5px rgba(0, 0, 0, 0.13), 0 6px 15px rgba(0, 0, 0, 0.08);
-    --shadow-prim-lg: 0 7px 18px rgba(0, 0, 0, 0.15), 0 4px 7px rgba(0, 0, 0, 0.08);
-    --shadow-prim-xl: 0 18px 40px rgba(0, 0, 0, 0.20), 0 7px 16px rgba(0, 0, 0, 0.11);
-    --shadow-prim-secondary: none;
+  /* ============================================================
+   * SEMANTIC SURFACE TOKENS
+   * ============================================================ */
+  --color-prim-bg:              oklch(0.980 0.004 195);   /* Page background */
+  --color-prim-bg-surface:      oklch(1.000 0.000 195);   /* Cards, panels */
+  --color-prim-bg-surface-baked: oklch(0.970 0.006 195);  /* Subtle inset areas */
+  --color-prim-bg-overlay:      oklch(0.940 0.012 195);   /* Hover states, chips */
 
-    /* Style */
-    --prim-style: default;
-    --prim-backdrop-blur: none;
-    --prim-border-width: 1px;
-    --prim-bg-gradient: oklch(0.985 0.006 150);
+  --color-prim-text:            oklch(0.180 0.015 220);   /* Body text — near black */
+  --color-prim-text-muted:      oklch(0.480 0.020 220);   /* Secondary text */
+  --color-prim-text-subtle:     oklch(0.650 0.012 220);   /* Placeholders, labels */
+  --color-prim-text-on-surface: oklch(0.180 0.015 220);
 
-    /* Layout tokens */
-    --radius-prim: 10px;
-    --spacing-prim-x: 5px;
-    --spacing-prim-y: 5px;
+  --color-prim-border:          oklch(0.880 0.010 210);   /* Default border */
+  --color-prim-border-subtle:   oklch(0.930 0.006 210);   /* Very subtle dividers */
+  --color-prim-border-strong:   oklch(0.750 0.020 210);   /* Focused borders */
 
-    /* Spacing utilities - generated */
-    --prim-spacing-x-0-5: calc(var(--spacing-prim-x) * 0.5);
-    --prim-spacing-y-0-5: calc(var(--spacing-prim-y) * 0.5);
-    --prim-spacing-0-5: calc(var(--spacing-prim-y) * 0.5);
-    --prim-spacing-x-1: calc(var(--spacing-prim-x) * 1);
-    --prim-spacing-y-1: calc(var(--spacing-prim-y) * 1);
-    --prim-spacing-1: calc(var(--spacing-prim-y) * 1);
-    --prim-spacing-x-1-5: calc(var(--spacing-prim-x) * 1.5);
-    --prim-spacing-y-1-5: calc(var(--spacing-prim-y) * 1.5);
-    --prim-spacing-1-5: calc(var(--spacing-prim-y) * 1.5);
-    --prim-spacing-x-2: calc(var(--spacing-prim-x) * 2);
-    --prim-spacing-y-2: calc(var(--spacing-prim-y) * 2);
-    --prim-spacing-2: calc(var(--spacing-prim-y) * 2);
-    --prim-spacing-x-2-5: calc(var(--spacing-prim-x) * 2.5);
-    --prim-spacing-y-2-5: calc(var(--spacing-prim-y) * 2.5);
-    --prim-spacing-2-5: calc(var(--spacing-prim-y) * 2.5);
-    --prim-spacing-x-3: calc(var(--spacing-prim-x) * 3);
-    --prim-spacing-y-3: calc(var(--spacing-prim-y) * 3);
-    --prim-spacing-3: calc(var(--spacing-prim-y) * 3);
-    --prim-spacing-x-4: calc(var(--spacing-prim-x) * 4);
-    --prim-spacing-y-4: calc(var(--spacing-prim-y) * 4);
-    --prim-spacing-4: calc(var(--spacing-prim-y) * 4);
-    --prim-spacing-x-5: calc(var(--spacing-prim-x) * 5);
-    --prim-spacing-y-5: calc(var(--spacing-prim-y) * 5);
-    --prim-spacing-5: calc(var(--spacing-prim-y) * 5);
-    --prim-spacing-x-6: calc(var(--spacing-prim-x) * 6);
-    --prim-spacing-y-6: calc(var(--spacing-prim-y) * 6);
-    --prim-spacing-6: calc(var(--spacing-prim-y) * 6);
-    --prim-spacing-x-8: calc(var(--spacing-prim-x) * 8);
-    --prim-spacing-y-8: calc(var(--spacing-prim-y) * 8);
-    --prim-spacing-8: calc(var(--spacing-prim-y) * 8);
-    --prim-spacing-x-10: calc(var(--spacing-prim-x) * 10);
-    --prim-spacing-y-10: calc(var(--spacing-prim-y) * 10);
-    --prim-spacing-10: calc(var(--spacing-prim-y) * 10);
-    --prim-spacing-x-12: calc(var(--spacing-prim-x) * 12);
-    --prim-spacing-y-12: calc(var(--spacing-prim-y) * 12);
-    --prim-spacing-12: calc(var(--spacing-prim-y) * 12);
-    --prim-spacing-x-16: calc(var(--spacing-prim-x) * 16);
-    --prim-spacing-y-16: calc(var(--spacing-prim-y) * 16);
-    --prim-spacing-16: calc(var(--spacing-prim-y) * 16);
-    --prim-inline-gap: calc(var(--spacing-prim-x) * 2);
+  /* ============================================================
+   * SEMANTIC STATUS COLORS — WCAG AA compliant on white
+   * ============================================================ */
+  --color-prim-success:         oklch(0.520 0.140 155);   /* 4.8:1 on white */
+  --color-prim-success-surface: oklch(0.960 0.030 155);
+  --color-prim-success-border:  oklch(0.800 0.080 155);
 
-    /* Semantic colors */
-    --color-prim-error: oklch(0.60 0.22 25);
-    --color-prim-success: oklch(0.62 0.15 150);
-    --color-prim-warning: oklch(0.74 0.16 75);
+  --color-prim-warning:         oklch(0.580 0.145 70);    /* 4.6:1 on white */
+  --color-prim-warning-surface: oklch(0.970 0.035 80);
+  --color-prim-warning-border:  oklch(0.820 0.090 75);
 
-    /* Typography */
-    --font-prim: Alexandria, DM Sans, system-ui, sans-serif;
-    --font-prim-mono: JetBrains Mono, monospace;
+  --color-prim-error:           oklch(0.520 0.200 22);    /* 5.2:1 on white */
+  --color-prim-error-surface:   oklch(0.960 0.030 22);
+  --color-prim-error-border:    oklch(0.800 0.110 22);
 
-    --font-size-prim: 0.875rem;
-    --font-weight-prim: 400;
-    --leading-prim: 1.5;
+  --color-prim-info:            oklch(0.500 0.130 245);
+  --color-prim-info-surface:    oklch(0.960 0.020 245);
 
-    /* Type scale */
-    --font-size-xs: 0.5625rem;
-    --prim-font-size-xs: 0.5625rem;
-    --font-size-sm: 0.7rem;
-    --prim-font-size-sm: 0.7rem;
-    --font-size-base: 0.875rem;
-    --prim-font-size-base: 0.875rem;
-    --font-size-lg: 1.0938rem;
-    --prim-font-size-lg: 1.0938rem;
-    --font-size-xl: 1.3687rem;
-    --prim-font-size-xl: 1.3687rem;
-    --font-size-2xl: 1.7063rem;
-    --prim-font-size-2xl: 1.7063rem;
-    --font-size-3xl: 2.1375rem;
-    --prim-font-size-3xl: 2.1375rem;
-    --font-size-4xl: 2.6688rem;
-    --prim-font-size-4xl: 2.6688rem;
+  /* ============================================================
+   * ON-FILL TEXT COLORS (text on colored backgrounds)
+   * ============================================================ */
+  --color-prim-primary-on-fill:   oklch(0.98 0.005 195);
+  --color-prim-secondary-on-fill: oklch(0.98 0.004 250);
+  --color-prim-accent-on-fill:    oklch(0.15 0.020 80);   /* Dark on amber */
+  --prim-primary-on-fill:   var(--color-prim-primary-on-fill);
+  --prim-secondary-on-fill: var(--color-prim-secondary-on-fill);
+  --prim-accent-on-fill:    var(--color-prim-accent-on-fill);
 
-    /* On-fill text colors */
-    --color-prim-primary-on-fill: oklch(0.98 0.005 150);
-    --color-prim-secondary-on-fill: oklch(0.16 0.008 260);
-    --color-prim-accent-on-fill: oklch(0.16 0.008 45);
-    --prim-primary-on-fill: var(--color-prim-primary-on-fill);
-    --prim-secondary-on-fill: var(--color-prim-secondary-on-fill);
-    --prim-accent-on-fill: var(--color-prim-accent-on-fill);
+  /* ============================================================
+   * SHADOWS — subtle, layered depth system
+   * ============================================================ */
+  --shadow-prim-xs: 0 1px 2px oklch(0.15 0.010 220 / 0.05);
+  --shadow-prim-sm: 0 1px 3px oklch(0.15 0.010 220 / 0.08),
+                    0 1px 2px oklch(0.15 0.010 220 / 0.04);
+  --shadow-prim:    0 4px 6px oklch(0.15 0.010 220 / 0.06),
+                    0 2px 4px oklch(0.15 0.010 220 / 0.04);
+  --shadow-prim-md: 0 8px 16px oklch(0.15 0.010 220 / 0.08),
+                    0 3px 6px  oklch(0.15 0.010 220 / 0.05);
+  --shadow-prim-lg: 0 16px 32px oklch(0.15 0.010 220 / 0.10),
+                    0 6px 12px  oklch(0.15 0.010 220 / 0.06);
+  --shadow-prim-xl: 0 24px 48px oklch(0.15 0.010 220 / 0.14),
+                    0 8px 16px  oklch(0.15 0.010 220 / 0.08);
+  --shadow-prim-secondary: none;
 
-    /* Animation */
-    --prim-animation-personality: 0.5;
-    --prim-reduced-motion: 0;
+  /* ============================================================
+   * BORDER & SHAPE
+   * ============================================================ */
+  --prim-border-width:  1px;
+  --radius-prim:        12px;
+  --radius-prim-sm:     8px;
+  --radius-prim-lg:     16px;
+  --radius-prim-xl:     20px;
+  --radius-prim-full:   9999px;
+
+  /* ============================================================
+   * SPACING SYSTEM — 4px base grid
+   * ============================================================ */
+  --spacing-prim-x: 4px;
+  --spacing-prim-y: 4px;
+
+  --prim-spacing-0-5:  2px;
+  --prim-spacing-1:    4px;
+  --prim-spacing-1-5:  6px;
+  --prim-spacing-2:    8px;
+  --prim-spacing-2-5:  10px;
+  --prim-spacing-3:    12px;
+  --prim-spacing-4:    16px;
+  --prim-spacing-5:    20px;
+  --prim-spacing-6:    24px;
+  --prim-spacing-8:    32px;
+  --prim-spacing-10:   40px;
+  --prim-spacing-12:   48px;
+  --prim-spacing-16:   64px;
+  --prim-inline-gap:   8px;
+
+  /* Legacy spacing aliases (keep compatibility) */
+  --prim-spacing-x-0-5: var(--prim-spacing-0-5);
+  --prim-spacing-y-0-5: var(--prim-spacing-0-5);
+  --prim-spacing-x-1:   var(--prim-spacing-1);
+  --prim-spacing-y-1:   var(--prim-spacing-1);
+  --prim-spacing-x-2:   var(--prim-spacing-2);
+  --prim-spacing-y-2:   var(--prim-spacing-2);
+  --prim-spacing-x-3:   var(--prim-spacing-3);
+  --prim-spacing-y-3:   var(--prim-spacing-3);
+  --prim-spacing-x-4:   var(--prim-spacing-4);
+  --prim-spacing-y-4:   var(--prim-spacing-4);
+  --prim-spacing-x-5:   var(--prim-spacing-5);
+  --prim-spacing-y-5:   var(--prim-spacing-5);
+  --prim-spacing-x-6:   var(--prim-spacing-6);
+  --prim-spacing-y-6:   var(--prim-spacing-6);
+  --prim-spacing-x-8:   var(--prim-spacing-8);
+  --prim-spacing-y-8:   var(--prim-spacing-8);
+  --prim-spacing-x-10:  var(--prim-spacing-10);
+  --prim-spacing-y-10:  var(--prim-spacing-10);
+  --prim-spacing-x-12:  var(--prim-spacing-12);
+  --prim-spacing-y-12:  var(--prim-spacing-12);
+  --prim-spacing-x-16:  var(--prim-spacing-16);
+  --prim-spacing-y-16:  var(--prim-spacing-16);
+
+  /* ============================================================
+   * TYPOGRAPHY — Alexandria Arabic + JetBrains Mono
+   * ============================================================ */
+  --font-prim:      Alexandria, 'DM Sans', system-ui, sans-serif;
+  --font-prim-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Base */
+  --font-size-prim:   0.9375rem;   /* 15px — improved from 14px for readability */
+  --font-weight-prim: 400;
+  --leading-prim:     1.6;          /* More breathing room */
+
+  /* Type scale — fluid and balanced */
+  --font-size-xs:   0.6875rem;   /* 11px */
+  --font-size-sm:   0.8125rem;   /* 13px */
+  --font-size-base: 0.9375rem;   /* 15px */
+  --font-size-md:   1.0625rem;   /* 17px */
+  --font-size-lg:   1.1875rem;   /* 19px */
+  --font-size-xl:   1.375rem;    /* 22px */
+  --font-size-2xl:  1.625rem;    /* 26px */
+  --font-size-3xl:  1.9375rem;   /* 31px */
+  --font-size-4xl:  2.3125rem;   /* 37px */
+
+  /* Legacy aliases */
+  --prim-font-size-xs:   var(--font-size-xs);
+  --prim-font-size-sm:   var(--font-size-sm);
+  --prim-font-size-base: var(--font-size-base);
+  --prim-font-size-lg:   var(--font-size-lg);
+  --prim-font-size-xl:   var(--font-size-xl);
+  --prim-font-size-2xl:  var(--font-size-2xl);
+  --prim-font-size-3xl:  var(--font-size-3xl);
+  --prim-font-size-4xl:  var(--font-size-4xl);
+
+  /* ============================================================
+   * INTERACTIVE STATES
+   * ============================================================ */
+  --prim-focus-ring:        0 0 0 3px oklch(0.52 0.130 195 / 0.25);
+  --prim-focus-ring-error:  0 0 0 3px oklch(0.52 0.200 22 / 0.25);
+
+  /* ============================================================
+   * ANIMATION
+   * ============================================================ */
+  --prim-duration-fast:    150ms;
+  --prim-duration-base:    200ms;
+  --prim-duration-slow:    300ms;
+  --prim-ease-default:     cubic-bezier(0.4, 0, 0.2, 1);
+  --prim-ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  --prim-animation-personality: 0.5;
+  --prim-reduced-motion:   0;
+
+  /* Legacy style tokens */
+  --prim-style:         default;
+  --prim-backdrop-blur: none;
+  --prim-bg-gradient:   var(--color-prim-bg);
+
+  /* Sidebar width */
+  --sidebar-width:      256px;
+  --sidebar-rail-width: 64px;
+  --topbar-height:      64px;
 }

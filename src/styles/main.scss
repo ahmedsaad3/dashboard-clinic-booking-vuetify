@@ -1,11 +1,25 @@
 @import './tokens.css';
 
+/* ============================================================
+ * BASE RESET & ROOT STYLES
+ * ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   background-color: var(--color-prim-bg);
   color: var(--color-prim-text);
   font-family: var(--font-prim);
   font-size: var(--font-size-prim);
   line-height: var(--leading-prim);
+  font-feature-settings: 'cv01', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -13,11 +27,471 @@ body {
   background-color: var(--color-prim-bg);
   color: var(--color-prim-text);
   font-family: var(--font-prim);
+  min-height: 100vh;
 }
 
+/* ============================================================
+ * TYPOGRAPHY SCALE — Global overrides
+ * ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-prim);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-prim-text);
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: var(--color-prim-text);
+  line-height: var(--leading-prim);
+}
+
+small, .text-caption {
+  font-size: var(--font-size-sm) !important;
+  line-height: 1.5;
+}
+
+code, pre, .v-code {
+  font-family: var(--font-prim-mono);
+  font-size: 0.875em;
+}
+
+/* ============================================================
+ * VUETIFY COMPONENT OVERRIDES
+ * ============================================================ */
+
 @layer vuetify-overrides {
+
+  /* --- App Bar --- */
+  .v-app-bar {
+    border-bottom: var(--prim-border-width) solid var(--color-prim-border) !important;
+    box-shadow: var(--shadow-prim-xs) !important;
+    background-color: var(--color-prim-bg-surface) !important;
+  }
+
+  /* --- Navigation Drawer --- */
+  .v-navigation-drawer {
+    border-color: var(--color-prim-border) !important;
+    background-color: var(--color-prim-bg-surface) !important;
+  }
+
+  /* --- Cards --- */
+  .v-card {
+    border-color: var(--color-prim-border);
+    box-shadow: var(--shadow-prim-xs) !important;
+    transition:
+      box-shadow var(--prim-duration-base) var(--prim-ease-default),
+      transform var(--prim-duration-base) var(--prim-ease-default),
+      border-color var(--prim-duration-base) var(--prim-ease-default);
+  }
+
+  .v-card--hover:hover,
+  .v-card[href]:hover {
+    box-shadow: var(--shadow-prim-md) !important;
+    transform: translateY(-2px);
+    border-color: var(--color-primary-200) !important;
+  }
+
+  /* --- Buttons — Minimum 44px touch target --- */
+  .v-btn {
+    font-family: var(--font-prim);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition:
+      box-shadow var(--prim-duration-fast) var(--prim-ease-default),
+      transform  var(--prim-duration-fast) var(--prim-ease-default),
+      background-color var(--prim-duration-fast) var(--prim-ease-default);
+  }
+
+  .v-btn--size-default {
+    min-height: 44px;
+    padding-inline: 20px;
+  }
+
+  .v-btn--size-small {
+    min-height: 36px;
+    padding-inline: 14px;
+  }
+
+  .v-btn--size-x-small {
+    min-height: 30px;
+    padding-inline: 10px;
+  }
+
+  .v-btn--size-large {
+    min-height: 52px;
+    padding-inline: 28px;
+    font-size: var(--font-size-md) !important;
+  }
+
+  .v-btn--variant-flat:hover,
+  .v-btn--variant-elevated:hover {
+    box-shadow: var(--shadow-prim-md) !important;
+    filter: brightness(1.05);
+  }
+
+  .v-btn--variant-flat:active,
+  .v-btn--variant-elevated:active {
+    transform: scale(0.98);
+  }
+
+  .v-btn:focus-visible {
+    box-shadow: var(--prim-focus-ring) !important;
+    outline: none;
+  }
+
+  /* --- Text Fields & Inputs --- */
+  .v-field {
+    font-family: var(--font-prim);
+    font-size: var(--font-size-base) !important;
+    transition: box-shadow var(--prim-duration-fast) var(--prim-ease-default);
+  }
+
+  .v-field--variant-outlined .v-field__outline {
+    transition: color var(--prim-duration-fast) var(--prim-ease-default);
+  }
+
+  .v-field--focused .v-field__outline {
+    box-shadow: var(--prim-focus-ring);
+  }
+
+  .v-label {
+    font-family: var(--font-prim);
+    font-size: var(--font-size-sm) !important;
+    font-weight: 500;
+  }
+
+  /* Input height — comfortable touch target */
+  .v-field--density-comfortable .v-field__input {
+    min-height: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .v-field--density-compact .v-field__input {
+    min-height: 40px;
+  }
+
+  /* --- Data Table --- */
+  .v-data-table {
+    font-family: var(--font-prim);
+    font-size: var(--font-size-base) !important;
+  }
+
+  .v-data-table-header__content {
+    font-size: var(--font-size-xs) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-prim-text-muted) !important;
+  }
+
+  .v-data-table__td {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    border-bottom-color: var(--color-prim-border-subtle) !important;
+  }
+
+  .v-data-table__tr:hover .v-data-table__td {
+    background-color: var(--color-prim-bg-overlay) !important;
+  }
+
+  .v-data-table__tr:last-child .v-data-table__td {
+    border-bottom: none !important;
+  }
+
+  /* --- Chips --- */
+  .v-chip {
+    font-family: var(--font-prim);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .v-chip--size-default {
+    min-height: 32px;
+    padding-inline: 12px;
+  }
+
+  .v-chip--size-small {
+    min-height: 26px;
+    font-size: var(--font-size-xs) !important;
+    padding-inline: 10px;
+  }
+
+  /* --- List Items (sidebar nav) --- */
+  .v-list-item {
+    min-height: 44px !important;
+    border-radius: var(--radius-prim-sm) !important;
+    font-family: var(--font-prim);
+    font-size: var(--font-size-base) !important;
+    transition:
+      background-color var(--prim-duration-fast) var(--prim-ease-default),
+      color var(--prim-duration-fast) var(--prim-ease-default);
+  }
+
+  .v-list-item--active {
+    font-weight: 600;
+  }
+
+  .v-list-item-title {
+    font-size: var(--font-size-base) !important;
+    line-height: 1.5;
+  }
+
+  .v-list-item-subtitle {
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-prim-text-muted);
+  }
+
+  /* --- Select & Autocomplete --- */
+  .v-select .v-field__input {
+    font-size: var(--font-size-base) !important;
+  }
+
+  /* --- Alerts --- */
+  .v-alert {
+    font-family: var(--font-prim);
+    border-radius: var(--radius-prim) !important;
+  }
+
+  .v-alert__content {
+    font-size: var(--font-size-base) !important;
+    line-height: var(--leading-prim);
+  }
+
+  .v-alert-title {
+    font-size: var(--font-size-md) !important;
+    font-weight: 700;
+  }
+
+  /* --- Dialogs / Modals --- */
+  .v-dialog > .v-overlay__content > .v-card {
+    box-shadow: var(--shadow-prim-xl) !important;
+  }
+
+  /* --- Snackbar --- */
+  .v-snackbar__content {
+    font-family: var(--font-prim);
+    font-size: var(--font-size-base) !important;
+    font-weight: 500;
+  }
+
+  /* --- Dividers --- */
+  .v-divider {
+    border-color: var(--color-prim-border) !important;
+    opacity: 1 !important;
+  }
+
+  /* --- Switch --- */
+  .v-switch .v-label {
+    font-size: var(--font-size-base) !important;
+    font-weight: 500;
+  }
+
+  /* --- Tooltip --- */
+  .v-tooltip > .v-overlay__content {
+    font-family: var(--font-prim);
+    font-size: var(--font-size-sm) !important;
+    padding: 6px 12px;
+    border-radius: var(--radius-prim-sm);
+    background-color: oklch(0.18 0.015 220) !important;
+    box-shadow: var(--shadow-prim-md);
+  }
+
+  /* --- Breadcrumbs --- */
+  .v-breadcrumbs {
+    font-size: var(--font-size-sm) !important;
+    padding: 0;
+  }
+
+  /* --- Pagination --- */
+  .v-data-table-footer {
+    font-size: var(--font-size-sm) !important;
+    color: var(--color-prim-text-muted);
+  }
+
+  /* --- Progress Linear --- */
+  .v-progress-linear {
+    border-radius: var(--radius-prim-full) !important;
+  }
+
+  /* --- Badge --- */
+  .v-badge__badge {
+    font-size: 10px !important;
+    font-weight: 700;
+  }
+
+  /* --- Tab --- */
+  .v-tab {
+    font-family: var(--font-prim);
+    font-size: var(--font-size-base) !important;
+    font-weight: 600;
+    min-height: 48px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* --- Main content area --- */
+  .v-main {
+    background-color: var(--color-prim-bg) !important;
+  }
+
   code, pre, .v-code {
     font-family: var(--font-prim-mono);
   }
 }
 
+/* ============================================================
+ * UTILITY CLASSES — Gap, Transitions, Scrollbars
+ * ============================================================ */
+
+/* Gap utilities */
+.gap-1  { gap: var(--prim-spacing-1) !important; }
+.gap-2  { gap: var(--prim-spacing-2) !important; }
+.gap-3  { gap: var(--prim-spacing-3) !important; }
+.gap-4  { gap: var(--prim-spacing-4) !important; }
+.gap-5  { gap: var(--prim-spacing-5) !important; }
+.gap-6  { gap: var(--prim-spacing-6) !important; }
+
+/* Border utilities */
+.border {
+  border: var(--prim-border-width) solid var(--color-prim-border) !important;
+}
+.border-subtle {
+  border: var(--prim-border-width) solid var(--color-prim-border-subtle) !important;
+}
+
+/* Scroll utilities */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-prim-border) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--color-prim-border);
+  border-radius: var(--radius-prim-full);
+}
+
+/* Transition utilities */
+.transition-base {
+  transition: all var(--prim-duration-base) var(--prim-ease-default);
+}
+
+.transition-fast {
+  transition: all var(--prim-duration-fast) var(--prim-ease-default);
+}
+
+/* Focus visible */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--prim-focus-ring);
+}
+
+/* ============================================================
+ * SIDEBAR NAVIGATION STYLES
+ * ============================================================ */
+
+.admin-sidebar,
+.branch-sidebar {
+  border-inline-start: var(--prim-border-width) solid var(--color-prim-border) !important;
+  border-inline-end: none !important;
+  background-color: var(--color-prim-bg-surface) !important;
+}
+
+.nav-group-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-prim-text-subtle);
+  padding-block: 6px;
+}
+
+/* ============================================================
+ * STAT CARD HOVER ANIMATION
+ * ============================================================ */
+
+.stat-card {
+  transition:
+    box-shadow var(--prim-duration-base) var(--prim-ease-default),
+    transform  var(--prim-duration-base) var(--prim-ease-default) !important;
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-prim-md) !important;
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+ * TABLE STYLES
+ * ============================================================ */
+
+.clinic-table .v-data-table-header__content {
+  font-weight: 700 !important;
+  color: var(--color-prim-text-muted) !important;
+  font-size: var(--font-size-xs) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ============================================================
+ * SCROLLBAR — Applied globally to sidebar/chat areas
+ * ============================================================ */
+
+.v-navigation-drawer__content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-prim-border) transparent;
+}
+
+/* ============================================================
+ * RTL SPECIFIC ADJUSTMENTS
+ * ============================================================ */
+
+[dir="rtl"] .v-list-item__prepend {
+  margin-inline-end: 12px;
+  margin-inline-start: 0;
+}
+
+[dir="rtl"] .v-btn__prepend {
+  margin-inline-end: 8px;
+  margin-inline-start: -4px;
+}
+
+/* ============================================================
+ * PRINT STYLES
+ * ============================================================ */
+
+@media print {
+  .v-navigation-drawer,
+  .v-app-bar {
+    display: none !important;
+  }
+
+  .v-main {
+    margin-inline-start: 0 !important;
+  }
+}
+
+/* ============================================================
+ * REDUCED MOTION
+ * ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

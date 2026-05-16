@@ -30,6 +30,146 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/admin/': RouteRecordInfo<
+      '/admin/',
+      '/admin',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/audit-log/': RouteRecordInfo<
+      '/admin/audit-log/',
+      '/admin/audit-log',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/branches/': RouteRecordInfo<
+      '/admin/branches/',
+      '/admin/branches',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/notifications/history/': RouteRecordInfo<
+      '/admin/notifications/history/',
+      '/admin/notifications/history',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/notifications/send/': RouteRecordInfo<
+      '/admin/notifications/send/',
+      '/admin/notifications/send',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/offers/': RouteRecordInfo<
+      '/admin/offers/',
+      '/admin/offers',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/schedule/': RouteRecordInfo<
+      '/admin/schedule/',
+      '/admin/schedule',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/settings/': RouteRecordInfo<
+      '/admin/settings/',
+      '/admin/settings',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/subscriptions/payments/': RouteRecordInfo<
+      '/admin/subscriptions/payments/',
+      '/admin/subscriptions/payments',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/subscriptions/plans/': RouteRecordInfo<
+      '/admin/subscriptions/plans/',
+      '/admin/subscriptions/plans',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/admin/users/': RouteRecordInfo<
+      '/admin/users/',
+      '/admin/users',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/': RouteRecordInfo<
+      '/branch/',
+      '/branch',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/bookings/': RouteRecordInfo<
+      '/branch/bookings/',
+      '/branch/bookings',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/chats/': RouteRecordInfo<
+      '/branch/chats/',
+      '/branch/chats',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/customers/': RouteRecordInfo<
+      '/branch/customers/',
+      '/branch/customers',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/notifications/': RouteRecordInfo<
+      '/branch/notifications/',
+      '/branch/notifications',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/offers/': RouteRecordInfo<
+      '/branch/offers/',
+      '/branch/offers',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/profile/': RouteRecordInfo<
+      '/branch/profile/',
+      '/branch/profile',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/branch/schedule/': RouteRecordInfo<
+      '/branch/schedule/',
+      '/branch/schedule',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/login': RouteRecordInfo<
+      '/login',
+      '/login',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -46,6 +186,126 @@ declare module 'vue-router/auto-routes' {
     'src/pages/index.vue': {
       routes:
         | '/'
+      views:
+        | never
+    }
+    'src/pages/admin/index.vue': {
+      routes:
+        | '/admin/'
+      views:
+        | never
+    }
+    'src/pages/admin/audit-log/index.vue': {
+      routes:
+        | '/admin/audit-log/'
+      views:
+        | never
+    }
+    'src/pages/admin/branches/index.vue': {
+      routes:
+        | '/admin/branches/'
+      views:
+        | never
+    }
+    'src/pages/admin/notifications/history/index.vue': {
+      routes:
+        | '/admin/notifications/history/'
+      views:
+        | never
+    }
+    'src/pages/admin/notifications/send/index.vue': {
+      routes:
+        | '/admin/notifications/send/'
+      views:
+        | never
+    }
+    'src/pages/admin/offers/index.vue': {
+      routes:
+        | '/admin/offers/'
+      views:
+        | never
+    }
+    'src/pages/admin/schedule/index.vue': {
+      routes:
+        | '/admin/schedule/'
+      views:
+        | never
+    }
+    'src/pages/admin/settings/index.vue': {
+      routes:
+        | '/admin/settings/'
+      views:
+        | never
+    }
+    'src/pages/admin/subscriptions/payments/index.vue': {
+      routes:
+        | '/admin/subscriptions/payments/'
+      views:
+        | never
+    }
+    'src/pages/admin/subscriptions/plans/index.vue': {
+      routes:
+        | '/admin/subscriptions/plans/'
+      views:
+        | never
+    }
+    'src/pages/admin/users/index.vue': {
+      routes:
+        | '/admin/users/'
+      views:
+        | never
+    }
+    'src/pages/branch/index.vue': {
+      routes:
+        | '/branch/'
+      views:
+        | never
+    }
+    'src/pages/branch/bookings/index.vue': {
+      routes:
+        | '/branch/bookings/'
+      views:
+        | never
+    }
+    'src/pages/branch/chats/index.vue': {
+      routes:
+        | '/branch/chats/'
+      views:
+        | never
+    }
+    'src/pages/branch/customers/index.vue': {
+      routes:
+        | '/branch/customers/'
+      views:
+        | never
+    }
+    'src/pages/branch/notifications/index.vue': {
+      routes:
+        | '/branch/notifications/'
+      views:
+        | never
+    }
+    'src/pages/branch/offers/index.vue': {
+      routes:
+        | '/branch/offers/'
+      views:
+        | never
+    }
+    'src/pages/branch/profile/index.vue': {
+      routes:
+        | '/branch/profile/'
+      views:
+        | never
+    }
+    'src/pages/branch/schedule/index.vue': {
+      routes:
+        | '/branch/schedule/'
+      views:
+        | never
+    }
+    'src/pages/login.vue': {
+      routes:
+        | '/login'
       views:
         | never
     }
